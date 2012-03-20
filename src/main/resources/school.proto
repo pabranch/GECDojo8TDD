@@ -20,22 +20,22 @@ message Student{
 }
 #
 enum Subject {
-	java_package com.school.classes;
-    MATH = 0;
-    ENGLISH = 1;
-    HISTORY = 2;
-    SCIENCE = 3;
-    GYM = 4;
-    MUSIC = 5;
+	java_package com.school.curriculum;
+    MATH=0;
+    ENGLISH=1;
+    HISTORY=2;
+    SCIENCE=3;
+    GYM=4;
+    MUSIC=5;
 }
 #
 message Schedule{
-	java_package com.school.classes;
-	repeated Class classes;
+	java_package com.school.admin;
+	repeated Course courses;
 }
 #
-message Class{
-	java_package com.school.classes;
+message Course{
+	java_package com.school.admin;
 	long time;
 	Subject subject;
 }
