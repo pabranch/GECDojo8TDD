@@ -1,0 +1,41 @@
+message Person{
+	java_package com.school.people;
+	int id;
+	string name;
+	string email;
+}
+#
+message Teacher{
+	java_package com.school.people;
+	int id;
+	Person person;
+	Subject subject;
+}
+#
+message Student{
+	java_package com.school.people;
+	int id;
+	Person person;
+	Schedule schedule;
+}
+#
+enum Subject {
+	java_package com.school.classes;
+    MATH = 0;
+    ENGLISH = 1;
+    HISTORY = 2;
+    SCIENCE = 3;
+    GYM = 4;
+    MUSIC = 5;
+}
+#
+message Schedule{
+	java_package com.school.classes;
+	repeated Class classes;
+}
+#
+message Class{
+	java_package com.school.classes;
+	long time;
+	Subject subject;
+}
