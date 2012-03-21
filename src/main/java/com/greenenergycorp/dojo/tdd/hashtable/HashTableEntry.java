@@ -3,7 +3,6 @@ package com.greenenergycorp.dojo.tdd.hashtable;
 public class HashTableEntry
 {
     String key;
-
     int value;
 
     public HashTableEntry()

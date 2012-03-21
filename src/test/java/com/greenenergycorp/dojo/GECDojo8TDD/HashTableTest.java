@@ -60,4 +60,15 @@ public class HashTableTest
         String key = null;
         HashTableEntry.getIndex(key);
     }
+
+    @Test
+    public void testIndexWithValidKey()
+    {
+        String key = "testKey";
+
+        int expectedIndex = 3;
+        int actualIndex = HashTableEntry.getIndex(key);
+
+        assertEquals("Index with valid key", expectedIndex, actualIndex);
+    }
 }
