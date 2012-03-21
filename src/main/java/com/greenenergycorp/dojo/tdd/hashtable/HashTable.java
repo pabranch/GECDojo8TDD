@@ -63,6 +63,8 @@ public class HashTable
             return;
         }
 
+        System.out.println("-------------------------");
+
         for (int i = 0; i < table.length; i++)
         {
             System.out.println("i=" + i + ", " + table[i]);

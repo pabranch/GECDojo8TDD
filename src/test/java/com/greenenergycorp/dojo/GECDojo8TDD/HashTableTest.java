@@ -130,4 +130,32 @@ public class HashTableTest
 
         assertEquals("Add two entries, second entry: ", secondEntry, secondEntryAfterAdd);
     }
+
+    @Test
+    public void testAddTwoEntriesWithCollision()
+    {
+        String firstKey = "testKey";
+        int firstValue = 0;
+        int firstKeyIndex = 3;
+
+        HashTableEntry firstEntry = new HashTableEntry(firstKey, firstValue);
+        hashTableUnderTest.add(firstEntry);
+        HashTableEntry firstEntryAfterAdd = table[firstKeyIndex];
+
+        String secondKey = "worldsCollide";
+        int secondValue = 1;
+        int secondKeyComputedIndex = 4;
+
+        // "Now this is what it's like when worlds collide"  -Powerman 5000
+        // getIndex() for a key of "worldsCollide" is 3. Since the requirement
+        // is to use open addressing for hash collisions, the computed index
+        // for a collision is to use the next available slot, which is 4.
+
+        HashTableEntry secondEntry = new HashTableEntry(secondKey, secondValue);
+        hashTableUnderTest.add(secondEntry);
+        HashTableEntry secondEntryAfterAdd = table[secondKeyComputedIndex];
+
+        assertEquals("Add two entries, first entry: ", firstEntry, firstEntryAfterAdd);
+        assertEquals("Add two entries, second entry: ", secondEntry, secondEntryAfterAdd);
+    }
 }
