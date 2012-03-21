@@ -27,8 +27,6 @@ public class HashTableTest
         hashTableUnderTest = new HashTable(emptyTableSize);
         table = hashTableUnderTest.getTable();
 
-        HashTable.printTable(hashTableUnderTest);
-
         assertEquals("Empty hash table", emptyTableSize, table.length);
     }
 
@@ -157,5 +155,7 @@ public class HashTableTest
 
         assertEquals("Add two entries, first entry: ", firstEntry, firstEntryAfterAdd);
         assertEquals("Add two entries, second entry: ", secondEntry, secondEntryAfterAdd);
+
+        HashTable.printTable(hashTableUnderTest);
     }
 }

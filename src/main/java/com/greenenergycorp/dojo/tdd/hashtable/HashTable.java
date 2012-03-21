@@ -39,6 +39,11 @@ public class HashTable
         String key = entry.getKey();
         int index = HashTableEntry.getIndex(key);
 
+        if (table[index] != null)
+        {
+            index++;
+        }
+
         table[index] = entry;
     }
 
