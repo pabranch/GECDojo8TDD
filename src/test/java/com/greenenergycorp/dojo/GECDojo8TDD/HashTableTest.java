@@ -203,4 +203,12 @@ public class HashTableTest
 
         hashTableUnderTest.get(key);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetWithNullKey()
+    {
+        String key = null;
+
+        hashTableUnderTest.get(key);
+    }
 }
