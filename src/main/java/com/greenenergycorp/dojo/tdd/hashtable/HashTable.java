@@ -47,7 +47,7 @@ public class HashTable
 
         for (int i = 0; i < table.length; i++)
         {
-            System.out.println(table[i]);
+            System.out.println("i=" + i + ", " + table[i]);
         }
 
         return;

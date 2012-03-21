@@ -31,4 +31,26 @@ public class HashTableTest
 
         assertEquals("Empty hash table", emptyTableSize, table.length);
     }
+
+    @Test
+    public void testDefaultHashTableNothingAdded()
+    {
+        final int defaultTableSize = 16;
+        assertEquals("Default hash table", defaultTableSize, table.length);
+
+        HashTable.printTable(hashTableUnderTest);
+
+        for (int i = 0; i < defaultTableSize; i++)
+        {
+            HashTableEntry expectedTableEntry = null;
+            assertEquals("Default hash table", expectedTableEntry, table[i]);
+        }
+    }
+
+    @Test
+    public void testIndexWithEmptyString()
+    {
+        String key = "";
+        assertEquals("Index with empty string", -1, HashTableEntry.getIndex(key));
+    }
 }

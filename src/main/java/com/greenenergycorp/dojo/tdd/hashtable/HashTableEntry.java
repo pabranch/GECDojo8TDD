@@ -35,6 +35,11 @@ public class HashTableEntry
         this.value = value;
     }
 
+    public static int getIndex(String key)
+    {
+        return 0;
+    }
+
     @Override
     public String toString()
     {
