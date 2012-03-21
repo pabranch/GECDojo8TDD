@@ -77,8 +77,6 @@ public class HashTableTest
     {
         String key = "testKey2";
 
-        key.hashCode();
-
         int expectedIndex = 11;
         int actualIndex = HashTableEntry.getIndex(key);
 

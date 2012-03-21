@@ -43,10 +43,13 @@ public class HashTableEntry
             throw new IllegalArgumentException("key cannot be null or empty");
         }
 
-        String absoluteHexString = Integer.toHexString(abs(key.hashCode()));
+        int keyHashCode = abs(key.hashCode());
+        String absoluteHexString = Integer.toHexString(keyHashCode);
         String lastDigit = absoluteHexString.substring(absoluteHexString.length() - 1);
 
-        return Integer.parseInt(lastDigit, 16);
+        int index = Integer.parseInt(lastDigit, 16);
+
+        return index;
     }
 
     @Override
