@@ -195,4 +195,12 @@ public class HashTableTest
         assertEquals("Add three entries with adjacent collision, second entry: ", secondEntry, secondEntryAfterAdd);
         assertEquals("Add three entries with adjacent collision, third entry: ", thirdEntry, thirdEntryAfterAdd);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetWithEmptyKey()
+    {
+        String key = "";
+
+        hashTableUnderTest.get(key);
+    }
 }
