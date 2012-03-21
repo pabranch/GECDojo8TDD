@@ -35,6 +35,11 @@ public class HashTable
         {
             throw new IllegalArgumentException("entry cannot be null");
         }
+
+        String key = entry.getKey();
+        int index = HashTableEntry.getIndex(key);
+
+        table[index] = entry;
     }
 
     public HashTableEntry get(String key)

@@ -96,11 +96,14 @@ public class HashTableTest
     {
         String key = "testKey";
         int value = 0;
+        int index = 3;
 
         HashTableEntry entry = new HashTableEntry(key, value);
 
         hashTableUnderTest.add(entry);
 
-        assertEquals("Add one entry", entry, hashTableUnderTest.get(key));
+        HashTableEntry entryAfterAdd = table[index];
+
+        assertEquals("Add one entry", entry, entryAfterAdd);
     }
 }
