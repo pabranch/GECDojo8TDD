@@ -211,4 +211,19 @@ public class HashTableTest
 
         hashTableUnderTest.get(key);
     }
+
+    @Test
+    public void testGetWithValidKey()
+    {
+        String key = "testKey";
+        int value = 0;
+
+        HashTableEntry entry = new HashTableEntry(key, value);
+
+        hashTableUnderTest.add(entry);
+
+        HashTableEntry entryAfterAdd = hashTableUnderTest.get(key);
+
+        assertEquals("Get with valid key", entry, entryAfterAdd);
+    }
 }
