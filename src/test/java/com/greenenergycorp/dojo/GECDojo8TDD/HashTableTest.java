@@ -106,4 +106,28 @@ public class HashTableTest
 
         assertEquals("Add one entry", entry, entryAfterAdd);
     }
+
+    @Test
+    public void testAddTwoEntries()
+    {
+        String firstKey = "testKey";
+        int firstValue = 0;
+        int firstKeyIndex = 3;
+
+        HashTableEntry firstEntry = new HashTableEntry(firstKey, firstValue);
+        hashTableUnderTest.add(firstEntry);
+        HashTableEntry firstEntryAfterAdd = table[firstKeyIndex];
+
+        assertEquals("Add two entries, first entry: ", firstEntry, firstEntryAfterAdd);
+
+        String secondKey = "testKey2";
+        int secondValue = 1;
+        int secondKeyIndex = 11;
+
+        HashTableEntry secondEntry = new HashTableEntry(secondKey, secondValue);
+        hashTableUnderTest.add(secondEntry);
+        HashTableEntry secondEntryAfterAdd = table[secondKeyIndex];
+
+        assertEquals("Add two entries, second entry: ", secondEntry, secondEntryAfterAdd);
+    }
 }
