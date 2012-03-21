@@ -1,5 +1,7 @@
 package com.greenenergycorp.dojo.tdd.hashtable;
 
+import static java.lang.Math.abs;
+
 public class HashTableEntry
 {
     String key;
@@ -41,7 +43,10 @@ public class HashTableEntry
             throw new IllegalArgumentException("key cannot be null or empty");
         }
 
-        return 3;
+        String absoluteHexString = Integer.toHexString(abs(key.hashCode()));
+        String lastDigit = absoluteHexString.substring(absoluteHexString.length() - 1);
+
+        return Integer.parseInt(lastDigit, 16);
     }
 
     @Override
