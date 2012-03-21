@@ -31,7 +31,10 @@ public class HashTable
 
     public void add(HashTableEntry entry)
     {
-
+        if (entry == null)
+        {
+            throw new IllegalArgumentException("entry cannot be null");
+        }
     }
 
     public static void printTable(HashTable hashTable)
