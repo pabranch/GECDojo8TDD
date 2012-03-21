@@ -37,6 +37,11 @@ public class HashTableEntry
 
     public static int getIndex(String key)
     {
+        if (key == null)
+        {
+            throw new IllegalArgumentException("key cannot be null");
+        }
+
         return -1;
     }
 
