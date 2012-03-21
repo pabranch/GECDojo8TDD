@@ -39,7 +39,7 @@ public class HashTable
         String key = entry.getKey();
         int index = HashTableEntry.getIndex(key);
 
-        if (table[index] != null)
+        while (table[index] != null)
         {
             index++;
         }
