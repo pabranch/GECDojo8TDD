@@ -41,7 +41,7 @@ public class HashTableEntry
             throw new IllegalArgumentException("key cannot be null or empty");
         }
 
-        return 0;
+        return 3;
     }
 
     @Override
