@@ -54,7 +54,14 @@ public class HashTable
             throw new IllegalArgumentException("key cannot be null or empty");
         }
 
-        return null;
+        int index = HashTableEntry.getIndex(key);
+
+        while (table[index].getKey() != key)
+        {
+            index++;
+        }
+
+        return table[index];
     }
 
     public static void printTable(HashTable hashTable)

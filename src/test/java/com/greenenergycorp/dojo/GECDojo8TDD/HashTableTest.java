@@ -219,11 +219,28 @@ public class HashTableTest
         int value = 0;
 
         HashTableEntry entry = new HashTableEntry(key, value);
-
         hashTableUnderTest.add(entry);
+        HashTableEntry entryAfterGet = hashTableUnderTest.get(key);
 
-        HashTableEntry entryAfterAdd = hashTableUnderTest.get(key);
+        assertEquals("Get with valid key", entry, entryAfterGet);
+    }
 
-        assertEquals("Get with valid key", entry, entryAfterAdd);
+    @Test
+    public void testGetWithValidKeyAndCollision()
+    {
+        String firstKey = "testKey";
+        int firstValue = 0;
+
+        HashTableEntry firstEntry = new HashTableEntry(firstKey, firstValue);
+        hashTableUnderTest.add(firstEntry);
+
+        String secondKey = "worldsCollide";
+        int secondValue = 1;
+
+        HashTableEntry secondEntry = new HashTableEntry(secondKey, secondValue);
+        hashTableUnderTest.add(secondEntry);
+        HashTableEntry secondEntryAfterGet = hashTableUnderTest.get(secondKey);
+
+        assertEquals("Get with valid key and collision, second key: ", secondEntry, secondEntryAfterGet);
     }
 }
