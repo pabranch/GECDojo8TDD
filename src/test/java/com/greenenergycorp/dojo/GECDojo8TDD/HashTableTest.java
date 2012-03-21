@@ -153,9 +153,46 @@ public class HashTableTest
         hashTableUnderTest.add(secondEntry);
         HashTableEntry secondEntryAfterAdd = table[secondKeyComputedIndex];
 
-        assertEquals("Add two entries, first entry: ", firstEntry, firstEntryAfterAdd);
-        assertEquals("Add two entries, second entry: ", secondEntry, secondEntryAfterAdd);
+        assertEquals("Add two entries with collision, first entry: ", firstEntry, firstEntryAfterAdd);
+        assertEquals("Add two entries with collision, second entry: ", secondEntry, secondEntryAfterAdd);
+    }
+
+    @Test
+    public void testAddThreeEntriesWithCollisionAndAdjacentIndex()
+    {
+        String firstKey = "testKey";
+        int firstValue = 0;
+        int firstKeyIndex = 3;
+
+        HashTableEntry firstEntry = new HashTableEntry(firstKey, firstValue);
+        hashTableUnderTest.add(firstEntry);
 
         HashTable.printTable(hashTableUnderTest);
+
+        String secondKey = "theBlackEyedKeys!";
+        int secondValue = 1;
+        int secondKeyIndex = 4;
+
+        HashTableEntry secondEntry = new HashTableEntry(secondKey, secondValue);
+        hashTableUnderTest.add(secondEntry);
+
+        HashTable.printTable(hashTableUnderTest);
+
+        String thirdKey = "worldsCollide";
+        int thirdValue = 2;
+        int thirdKeyComputedIndex = 5;
+
+        HashTableEntry thirdEntry = new HashTableEntry(thirdKey, thirdValue);
+        hashTableUnderTest.add(thirdEntry);
+
+        HashTable.printTable(hashTableUnderTest);
+
+        HashTableEntry firstEntryAfterAdd = table[firstKeyIndex];
+        HashTableEntry secondEntryAfterAdd = table[secondKeyIndex];
+        HashTableEntry thirdEntryAfterAdd = table[thirdKeyComputedIndex];
+
+        assertEquals("Add three entries with adjacent collision, first entry: ", firstEntry, firstEntryAfterAdd);
+        assertEquals("Add three entries with adjacent collision, second entry: ", secondEntry, secondEntryAfterAdd);
+        assertEquals("Add three entries with adjacent collision, third entry: ", thirdEntry, thirdEntryAfterAdd);
     }
 }
