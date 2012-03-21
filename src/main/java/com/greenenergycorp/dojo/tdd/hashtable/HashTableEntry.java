@@ -37,7 +37,7 @@ public class HashTableEntry
 
     public static int getIndex(String key)
     {
-        return 0;
+        return -1;
     }
 
     @Override
