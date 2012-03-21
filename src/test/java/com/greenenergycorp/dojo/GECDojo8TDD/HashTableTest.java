@@ -62,13 +62,26 @@ public class HashTableTest
     }
 
     @Test
-    public void testIndexWithValidKey()
+    public void testIndexWithValidKey_1()
     {
         String key = "testKey";
 
         int expectedIndex = 3;
         int actualIndex = HashTableEntry.getIndex(key);
 
-        assertEquals("Index with valid key", expectedIndex, actualIndex);
+        assertEquals("Index with valid key 1", expectedIndex, actualIndex);
+    }
+
+    @Test
+    public void testIndexWithValidKey_2()
+    {
+        String key = "testKey2";
+
+        key.hashCode();
+
+        int expectedIndex = 11;
+        int actualIndex = HashTableEntry.getIndex(key);
+
+        assertEquals("Index with valid key 2", expectedIndex, actualIndex);
     }
 }
