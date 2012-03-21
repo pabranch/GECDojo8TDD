@@ -37,6 +37,11 @@ public class HashTable
         }
     }
 
+    public HashTableEntry get(String key)
+    {
+        return null;
+    }
+
     public static void printTable(HashTable hashTable)
     {
         if (hashTable == null)

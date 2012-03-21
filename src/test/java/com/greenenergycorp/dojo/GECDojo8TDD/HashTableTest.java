@@ -90,4 +90,17 @@ public class HashTableTest
 
         hashTableUnderTest.add(entry);
     }
+
+    @Test
+    public void testAddOneEntry()
+    {
+        String key = "testKey";
+        int value = 0;
+
+        HashTableEntry entry = new HashTableEntry(key, value);
+
+        hashTableUnderTest.add(entry);
+
+        assertEquals("Add one entry", entry, hashTableUnderTest.get(key));
+    }
 }
