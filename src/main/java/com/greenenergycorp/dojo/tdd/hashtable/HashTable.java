@@ -49,9 +49,9 @@ public class HashTable
 
     public HashTableEntry get(String key)
     {
-        if (key.length() == 0)
+        if (key == null || key.length() == 0)
         {
-            throw new IllegalArgumentException("key cannot be empty");
+            throw new IllegalArgumentException("key cannot be null or empty");
         }
 
         return null;
