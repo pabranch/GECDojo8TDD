@@ -28,4 +28,28 @@ public class HashTable
     {
         this.table = table;
     }
+
+    public static void printTable(HashTable hashTable)
+    {
+        if (hashTable == null)
+        {
+            System.out.println("hashTable is null");
+            return;
+        }
+
+        HashTableEntry[] table = hashTable.getTable();
+
+        if (table.length == 0)
+        {
+            System.out.println("hashTable is empty");
+            return;
+        }
+
+        for (int i = 0; i < table.length; i++)
+        {
+            System.out.println(table[i]);
+        }
+
+        return;
+    }
 }

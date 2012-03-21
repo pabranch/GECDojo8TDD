@@ -27,6 +27,8 @@ public class HashTableTest
         hashTableUnderTest = new HashTable(emptyTableSize);
         table = hashTableUnderTest.getTable();
 
+        HashTable.printTable(hashTableUnderTest);
+
         assertEquals("Empty hash table", emptyTableSize, table.length);
     }
 }
