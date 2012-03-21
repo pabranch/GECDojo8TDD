@@ -37,12 +37,12 @@ public class HashTableEntry
 
     public static int getIndex(String key)
     {
-        if (key == null)
+        if (key == null || key.length() == 0)
         {
-            throw new IllegalArgumentException("key cannot be null");
+            throw new IllegalArgumentException("key cannot be null or empty");
         }
 
-        return -1;
+        return 0;
     }
 
     @Override
