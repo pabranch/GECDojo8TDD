@@ -82,4 +82,12 @@ public class HashTableTest
 
         assertEquals("Index with valid key 2", expectedIndex, actualIndex);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddNullEntry()
+    {
+        HashTableEntry entry = null;
+
+        hashTableUnderTest.add(entry);
+    }
 }

@@ -29,6 +29,11 @@ public class HashTable
         this.table = table;
     }
 
+    public void add(HashTableEntry entry)
+    {
+
+    }
+
     public static void printTable(HashTable hashTable)
     {
         if (hashTable == null)
