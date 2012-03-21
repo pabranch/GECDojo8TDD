@@ -48,9 +48,16 @@ public class HashTableTest
     }
 
     @Test
-    public void testIndexWithEmptyString()
+    public void testIndexWithEmptyKey()
     {
         String key = "";
         assertEquals("Index with empty string", -1, HashTableEntry.getIndex(key));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testIndexWithNullKey()
+    {
+        String key = null;
+        HashTableEntry.getIndex(key);
     }
 }
